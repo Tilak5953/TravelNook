@@ -1,64 +1,52 @@
 # TravelNook ✈️
-> A complete, premium, luxury-grade travel and tourism startup website built using vanilla **HTML5**, **CSS3**, and modern **JavaScript (ES6)**.
+> A lightweight, responsive travel and itinerary booking platform built with pure HTML, CSS, and JavaScript.
 
-TravelNook is designed to look and feel like a modern travel startup (similar to Airbnb, Headout, or luxury travel boutiques). It contains zero frameworks, zero external CSS libraries (no Bootstrap, no React), and runs purely on native web engines.
+TravelNook is a frontend project that provides a complete user experience for discovering holiday packages, viewing detailed itineraries, calculating trip costs, and registering users. It runs entirely in the browser without external libraries or frameworks.
 
-##  Key Features
-- Sticky Glassmorphic Navbar: Scroll-responsive sticky design with active section highlighting, custom transitions, and a fully responsive mobile hamburger drawer.
-- Dynamic Search & Filter Engine: Live filtering by destination keywords, travel categories (Adventure, Honeymoon, Family, etc.), and max budgets with price-formatting outputs.
-- Dynamic Card Modals: Displays specific itineraries, durations, best times, and pricing details via pop-up details sheets.
-- Dynamic Booking Panel: A multi-step form calculator that automatically computes totals based on traveler counts, validates guest entries, and registers bookings.
-- Testimonial Autoplay Slider: A touch-friendly responsive carousel featuring customer quotes and star ratings with autoplay features.
-- Masonry Image Lightbox: Fully custom lightbox displaying enlarged visual shots with navigation controls (mouse clicks & keyboard arrow keys).
-- Client-Side Validation Control: Real-time form validation on input fields (Email structures, 10-digit phone patterns), visibility toggles for password fields, and a real-time Password Strength Evaluator**.
-- Toast Notifications: Fly-in alert banners indicating wishlist additions, form responses, and reservation actions.
-
----
-
-##  Tech Stack & Assets
-- Markup: HTML5 (Semantic elements)
-- Styles: Custom CSS3 variables, CSS Grid, Flexbox, Keyframe Animations (Fully Responsive)
-- Script: Vanilla JavaScript (ES6, DOM manipulation, custom event listeners)
-- Icons: FontAwesome 6 (CDN Integration)
-- Media: High-resolution, curated travel photography via Unsplash
+## Features
+* **Interactive Navigation**: Sticky header with scroll-based active state highlighting and a custom mobile slide-out menu.
+* **Live Destination Directory**: Search and filter packages dynamically by category, keywords, or budget limits.
+* **Itinerary Explorer**: Detailed modals showing day-by-day trip schedules, inclusions, and best times to visit using tabbed interfaces.
+* **Dynamic Booking Calculator**: Calculates total package costs automatically based on guest counts.
+* **Responsive Slider & Gallery**: A native testimonial carousel and an interactive photo lightbox with keyboard navigation.
+* **Client-Side Validations**: Real-time validation checks for forms (email/phone formats) and a live password strength indicator on sign-up.
+* **Toast Notification System**: Instant feedback popups for booking, form submissions, and wishlist updates.
 
 ---
 
-## 📂 Project Structure
+## Tech Stack
+* **HTML5**: Semantic document structure
+* **CSS3**: Custom variables (design tokens), Flexbox, CSS Grid, and responsive breakpoints
+* **JavaScript**: Modern ES6 features, DOM manipulation, custom event listeners
+* **Icons**: FontAwesome 6 (via CDN)
+* **Images**: High-quality travel photography curated from Unsplash
+
+---
+
+## Project Structure
 ```text
 TravelNook/
-│── index.html          # Main landing page
-│── destinations.html   # Live search index & interactive filtering
-│── upcoming-trips.html # Group schedules and booking portals
-│── login.html          # Login layout card with visibility toggles
-│── signup.html         # Signup layout card with password strength calculator
-│── about.html          # Brand story and statistical metrics
-│── contact.html        # Inquiry forms with validation patterns
-│── style.css           # Modern design system tokens, responsive grids, and animations
-│── script.js           # Core interactive JS components
-└── assets/             
-    ├── images/         # Local images folder
-    └── icons/          # Local icons folder
+├── index.html          # Homepage with hot destinations and testimonials
+├── destinations.html   # Search, filters, and all package listings
+├── upcoming-trips.html # Group schedules and booking calculator
+├── about.html          # Brand story and key stats
+├── contact.html        # Inquiry forms with validation patterns
+├── login.html          # Login card layout
+├── signup.html         # Signup layout with password strength checker
+├── style.css           # Modern CSS custom properties, grid layouts, animations
+└── script.js           # Core interactive JS components
 ```
 
 ---
 
-##  How to Run Locally
+## Running Locally
 1. Clone the repository:
    ```bash
    git clone https://github.com/Tilak5953/TravelNook.git
    ```
-2. Navigate into the folder:
-   ```bash
-   cd TravelNook
-   ```
-3. Open `index.html` in your browser.
-4. *Alternatively (Recommended)*: Open the folder in **VS Code**, right-click `index.html`, and choose **"Open with Live Server"**.
+2. Open `index.html` in your browser, or serve it using any local dev server (e.g., Live Server in VS Code).
 
 ---
 
-## 📸 Interface Previews
-*(Tip: Add your custom screenshots here once hosted!)*
-
----
-Developed with ❤️ for Portfolios and Technical Showcases.
+## License
+MIT License
