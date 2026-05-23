@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelNook | Premium Luxury Travel Startup</title>
+    <meta name="description" content="Discover premium luxury travel experiences with TravelNook. Explore handpicked destinations, guided group expeditions, and customized weekend escapes.">
+    <meta name="keywords" content="luxury travel, guided tours, India tour, international trips, weekend getaways, travel agency">
+    <meta name="robots" content="index, follow">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Icon Fonts (FontAwesome 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="index-page-marker">
+
+    <!-- Page Loading Cover -->
+    <div class="page-loading-cover" id="loading-cover">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Sticky Header & Navbar -->
+    <header class="header-nav">
+        <div class="container nav-container">
+            <a href="./index.html" class="logo" id="header-logo">
+                <i class="fa-solid fa-paper-plane"></i> Travel<span>Nook</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="./index.html" class="nav-link active" id="nav-home">Home</a></li>
+                    <li><a href="./destinations.html" class="nav-link" id="nav-destinations">Destinations</a></li>
+                    <li><a href="./upcoming-trips.html" class="nav-link" id="nav-trips">Upcoming Trips</a></li>
+                    <li><a href="#weekend-trips" class="nav-link" id="nav-weekend">Weekend Trips</a></li>
+                    <li><a href="#categories" class="nav-link" id="nav-categories">Categories</a></li>
+                    <li><a href="#activities" class="nav-link" id="nav-activities">Activities</a></li>
+                    <li><a href="./about.html" class="nav-link" id="nav-about">About Us</a></li>
+                    <li><a href="./contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+                    
+                    <!-- Mobile View Only Auth Buttons -->
+                    <div class="nav-auth-mobile">
+                        <a href="./login.html" class="login-btn">Login</a>
+                        <a href="./signup.html" class="signup-btn">Sign Up</a>
+                    </div>
+                </ul>
+            </nav>
+            
+            <div class="nav-auth">
+                <a href="./login.html" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;" id="nav-login-btn">Login</a>
+                <a href="./signup.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;" id="nav-signup-btn">Sign Up</a>
+            </div>
+
+            <div class="nav-toggle" id="nav-hamburger" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-content">
+            <span class="hero-badge reveal"><i class="fa-solid fa-crown"></i> Exclusive Luxury Escapes</span>
+            <h1 class="reveal">Your Gateway To The <span class="text-gold">World's Treasures</span></h1>
+            <p class="hero-tagline reveal">Experience premium personalized journeys, trusted expert guides, and handpicked luxury resorts tailored just for you.</p>
+            
+            <div class="hero-actions reveal">
+                <a href="./destinations.html" class="btn btn-primary" id="hero-btn-explore">Explore Destinations <i class="fa-solid fa-compass"></i></a>
+                <a href="./upcoming-trips.html" class="btn btn-secondary" id="hero-btn-book">Book Your Trip <i class="fa-solid fa-calendar-days"></i></a>
+            </div>
+        </div>
+
+        <a href="#search-widget-section" class="scroll-indicator" id="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Search Form Widget Section -->
+    <div id="search-widget-section" style="scroll-margin-top: var(--header-height);">
+        <div class="container" style="position: relative;">
+            <div class="search-widget reveal">
+                <form class="search-form" id="hero-search-form">
+                    <div class="form-group">
+                        <label for="hero-search-location">Where to?</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" id="hero-search-location" placeholder="e.g. Bali, Kashmir..." autocomplete="off">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hero-search-category">Category</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-tags"></i>
+                            <select id="hero-search-category">
+                                <option value="">All Categories</option>
+                                <option value="adventure">Adventure Trips</option>
+                                <option value="honeymoon">Honeymoon Trips</option>
+                                <option value="family">Family Trips</option>
+                                <option value="international">International Trips</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hero-search-date">Trip Date</label>
+                        <div class="input-container">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <input type="date" id="hero-search-date" min="2026-05-22">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hero-search-budget">Budget limit</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            <select id="hero-search-budget">
+                                <option value="">Any Budget</option>
+                                <option value="20000">Under ₹20,000</option>
+                                <option value="50000">Under ₹50,000</option>
+                                <option value="100000">Under ₹1,00,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="padding: 14px 30px;" id="hero-search-submit">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hot Destinations Section -->
+    <section class="section-padding" style="background-color: var(--black);" id="hot-destinations">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Hot <span class="text-gold">Destinations</span></h2>
+                <p>Explore our trending curated getaways designed for breathtaking memories and ultimate relaxation.</p>
+            </div>
+            
+            <div class="destinations-grid" id="hot-destinations-grid">
+                <!-- Dynamically Rendered by script.js -->
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="./destinations.html" class="btn btn-secondary reveal" id="btn-view-all-destinations">View All Packages <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Spotlight Showcase Section -->
+    <section class="section-padding" style="background-color: var(--dark-grey); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);" id="spotlight">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Featured Spotlight <span class="text-gold">Journeys</span></h2>
+                <p>Hand-picked boutique travel itineraries with custom private guides, luxury transportation, and curated five-star hospitality.</p>
+            </div>
+            
+            <!-- Spotlight Item 1 -->
+            <div class="highlight-row reveal">
+                <div class="highlight-media">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80" alt="Bali Premium Escape">
+                    <span class="card-tag" style="position: absolute; top: 20px; left: 20px;">Top Seller</span>
+                </div>
+                <div class="highlight-info">
+                    <h3>Bali Luxury Pool Villa Retreat</h3>
+                    <p>Escape to the Island of the Gods in ultimate comfort. This curated tour includes a 4-night stay in a private pool sanctuary in Seminyak, personal tour coordinators, tickets to majestic cliffside sunset temples, and a private luxury boat transfer to the snorkeling havens of Nusa Penida.</p>
+                    <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Rating</span>
+                            <strong style="font-size: 1.25rem;"><i class="fa-solid fa-star text-gold"></i> 4.9</strong>
+                        </div>
+                        <div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Inclusions</span>
+                            <strong style="font-size: 1rem; font-family: var(--font-body); font-weight: 500;">Private Villa, Breakfast, Boat Transfers</strong>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-book-trip" data-trip-title="Bali Villa Escape" data-trip-price="49999" id="spotlight-book-bali">Book Spot ₹49,999</button>
+                </div>
+            </div>
+
+            <!-- Spotlight Item 2 -->
+            <div class="highlight-row reverse reveal" style="margin-top: 80px;">
+                <div class="highlight-media">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80" alt="Switzerland Alps Journey">
+                    <span class="card-tag" style="position: absolute; top: 20px; left: 20px;">Premium Luxury</span>
+                </div>
+                <div class="highlight-info">
+                    <h3>Grand Alpine Switzerland Experience</h3>
+                    <p>Traverse through towering Swiss peaks, glacial lakes, and charming villages in absolute style. Benefit from a 1st Class Swiss Rail Pass, scenic cable car transfers to Mount Titlis, a luxurious mountain resort in Interlaken, and premium guided walks to the foothills of the Matterhorn in Zermatt.</p>
+                    <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Rating</span>
+                            <strong style="font-size: 1.25rem;"><i class="fa-solid fa-star text-gold"></i> 4.9</strong>
+                        </div>
+                        <div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Transport</span>
+                            <strong style="font-size: 1rem; font-family: var(--font-body); font-weight: 500;">1st Class Scenic Train, Cable Car</strong>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-book-trip" data-trip-title="Switzerland Alpine Tour" data-trip-price="119999" id="spotlight-book-swiss">Book Spot ₹1,19,999</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Trips Section -->
+    <section class="section-padding" style="background-color: var(--black);" id="upcoming-trips">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Upcoming Group <span class="text-gold">Expeditions</span></h2>
+                <p>Join our secure group expeditions. Travel with verified adventure-seekers and dynamic professional guides.</p>
+            </div>
+            
+            <div class="trips-grid">
+                <!-- Trip 1 (Kashmir) -->
+                <div class="card-trip reveal">
+                    <div class="card-image-wrap" style="height: 200px;">
+                        <span class="card-tag" style="background-color: var(--black); color: var(--primary); border: 1px solid var(--glass-border);">Selling Fast</span>
+                        <img src="https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=800&q=80" alt="Kashmir Expedition">
+                        <div class="card-image-overlay"></div>
+                        <div class="trip-meta-overlay">
+                            <span class="trip-badge"><i class="fa-regular fa-calendar"></i> June 15, 2026</span>
+                        </div>
+                    </div>
+                    <div class="card-content" style="padding: 20px;">
+                        <h3 class="card-title" style="font-size: 1.3rem; margin-bottom: 15px;">Kashmir Magic Tour</h3>
+                        <div class="trip-stats">
+                            <div class="trip-stat-item">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Duration</span>
+                                <strong>6 Days</strong>
+                            </div>
+                            <div class="trip-stat-item">
+                                <i class="fa-solid fa-user-group"></i>
+                                <span>Seats Left</span>
+                                <strong class="text-gold">4 seats</strong>
+                            </div>
+                            <div class="trip-stat-item">
+                                <i class="fa-solid fa-route"></i>
+                                <span>Type</span>
+                                <strong>Guided Group</strong>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="border: none; padding: 0;">
+                            <div class="card-price">
+                                <div class="price-label">Price per head</div>
+                                <div class="price-amount">₹19,999</div>
+                            </div>
+                            <button class="btn btn-primary btn-book-trip" data-trip-title="Kashmir Magic Tour" data-trip-price="19999" id="trip-book-kashmir">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trip 2 (Ladakh) -->
+                <div class="card-trip reveal">
+                    <div class="card-image-wrap" style="height: 200px;">
+                        <span class="card-tag" style="background-color: var(--black); color: var(--primary); border: 1px solid var(--glass-border);">Limited Seats</span>
+                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="Ladakh Expedition">
+                        <div class="card-image-overlay"></div>
+                        <div class="trip-meta-overlay">
+                            <span class="trip-badge"><i class="fa-regular fa-calendar"></i> July 05, 2026</span>
+                        </div>
+                    </div>
+                    <div class="card-content" style="padding: 20px;">
+                        <h3 class="card-title" style="font-size: 1.3rem; margin-bottom: 15px;">Ladakh Bike Expedition</h3>
+                        <div class="trip-stats">
+                            <div class="trip-stat-item">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Duration</span>
+                                <strong>7 Days</strong>
+                            </div>
+                            <div class="trip-stat-item">
+                                <i class="fa-solid fa-user-group"></i>
+                                <span>Seats Left</span>
+                                <strong class="text-gold">8 seats</strong>
+                            </div>
+                            <div class="trip-stat-item">
+                                <i class="fa-solid fa-route"></i>
+                                <span>Type</span>
+                                <strong>Biker Group</strong>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="border: none; padding: 0;">
+                            <div class="card-price">
+                                <div class="price-label">Price per head</div>
+                                <div class="price-amount">₹24,999</div>
+                            </div>
+                            <button class="btn btn-primary btn-book-trip" data-trip-title="Ladakh Bike Expedition" data-trip-price="24999" id="trip-book-ladakh">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trip 3 (Manali) -->
+                <div class="card-trip reveal">
+                    <div class="card-image-wrap" style="height: 200px;">
+                        <span class="card-tag" style="background-color: var(--black); color: var(--primary); border: 1px solid var(--glass-border);">Booking Open</span>
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="Manali Escape">
+                        <div class="card-image-overlay"></div>
+                        <div class="trip-meta-overlay">
+                            <span class="trip-badge"><i class="fa-regular fa-calendar"></i> Dec 18, 2026</span>
+                        </div>
+                    </div>
+                    <div class="card-content" style="padding: 20px;">
+                        <h3 class="card-title" style="font-size: 1.3rem; margin-bottom: 15px;">Manali Snow Escape</h3>
+                        <div class="trip-stats">
+                            <div class="trip-stat-item">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Duration</span>
+                                <strong>5 Days</strong>
+                            </div>
+                            <div class="trip-stat-item">
+                                <i class="fa-solid fa-user-group"></i>
+                                <span>Seats Left</span>
+                                <strong class="text-gold">15 seats</strong>
+                            </div>
+                            <div class="trip-stat-item">
+                                <i class="fa-solid fa-route"></i>
+                                <span>Type</span>
+                                <strong>Guided Group</strong>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="border: none; padding: 0;">
+                            <div class="card-price">
+                                <div class="price-label">Price per head</div>
+                                <div class="price-amount">₹14,999</div>
+                            </div>
+                            <button class="btn btn-primary btn-book-trip" data-trip-title="Manali Snow Escape" data-trip-price="14999" id="trip-book-manali">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="./upcoming-trips.html" class="btn btn-secondary reveal" id="btn-view-all-trips">View All Expeditions <i class="fa-solid fa-route"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekend Trips Section -->
+    <section class="section-padding" style="background-color: var(--dark-grey); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);" id="weekend-trips">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Quick Weekend <span class="text-gold">Escapes</span></h2>
+                <p>No leaves needed. Revitalize yourself with our perfect premium weekend getaways.</p>
+            </div>
+            
+            <div class="destinations-grid" id="weekend-trips-grid">
+                <!-- Rendered by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Categories Section -->
+    <section class="section-padding" style="background-color: var(--black);" id="categories">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Travel <span class="text-gold">By Category</span></h2>
+                <p>Whatever your vacation vibe is, find specialized travel itineraries built for your needs.</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="./destinations.html?category=domestic" class="card-category reveal" id="category-domestic">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <h4>Domestic Trips</h4>
+                </a>
+                
+                <a href="./destinations.html?category=international" class="card-category reveal" id="category-intl">
+                    <i class="fa-solid fa-globe"></i>
+                    <h4>International</h4>
+                </a>
+                
+                <a href="./destinations.html?category=adventure" class="card-category reveal" id="category-adventure">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    <h4>Adventure</h4>
+                </a>
+                
+                <a href="./destinations.html?category=spiritual" class="card-category reveal" id="category-spiritual">
+                    <i class="fa-solid fa-gopuram"></i>
+                    <h4>Spiritual</h4>
+                </a>
+                
+                <a href="./destinations.html?category=honeymoon" class="card-category reveal" id="category-honeymoon">
+                    <i class="fa-solid fa-heart"></i>
+                    <h4>Honeymoon</h4>
+                </a>
+                
+                <a href="./destinations.html?category=family" class="card-category reveal" id="category-family">
+                    <i class="fa-solid fa-people-roof"></i>
+                    <h4>Family Trips</h4>
+                </a>
+                
+                <a href="./destinations.html?category=solo" class="card-category reveal" id="category-solo">
+                    <i class="fa-solid fa-person-walking-luggage"></i>
+                    <h4>Solo Trips</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun & Activities Section -->
+    <section class="section-padding" style="background-color: var(--dark-grey); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);" id="activities">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Fun & <span class="text-gold">Activities</span></h2>
+                <p>Ignite your wanderlust with high-energy activities curated and guided by safety professionals.</p>
+            </div>
+            
+            <div class="activities-grid">
+                <!-- Activity 1 -->
+                <div class="card-activity reveal">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Trekking">
+                    <div class="activity-overlay">
+                        <i class="fa-solid fa-person-hiking"></i>
+                        <h4>Mountain Trekking</h4>
+                        <p>Summit beautiful ranges with local mountaineers and high-grade safety equipment.</p>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="card-activity reveal">
+                    <img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=600&q=80" alt="River Rafting">
+                    <div class="activity-overlay">
+                        <i class="fa-solid fa-water"></i>
+                        <h4>River Rafting</h4>
+                        <p>Conquer white-water rapids in Rishikesh and Himachal alongside certified river guides.</p>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="card-activity reveal">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80" alt="Camping">
+                    <div class="activity-overlay">
+                        <i class="fa-solid fa-tent"></i>
+                        <h4>Luxury Camping</h4>
+                        <p>Sleep under millions of stars in glass-domed tents and luxury glamping sites.</p>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="card-activity reveal">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=600&q=80" alt="Skiing">
+                    <div class="activity-overlay">
+                        <i class="fa-solid fa-person-skiing"></i>
+                        <h4>Skiing & Snowboarding</h4>
+                        <p>Glide down the powdery slopes of Gulmarg and Solang Valley with customized trainers.</p>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="card-activity reveal">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Scuba Diving">
+                    <div class="activity-overlay">
+                        <i class="fa-solid fa-person-swimming"></i>
+                        <h4>Scuba Diving</h4>
+                        <p>Unveil majestic marine ecosystems in Goa, Havelock Island, and Nusa Penida.</p>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="card-activity reveal">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Desert Safari">
+                    <div class="activity-overlay">
+                        <i class="fa-solid fa-sun-plant-wilt"></i>
+                        <h4>Desert Safari</h4>
+                        <p>Enjoy dynamic 4x4 dune bashing, camel safaris, and high-fidelity Arabian nights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Travel Nook Section -->
+    <section class="section-padding" style="background-color: var(--black);" id="why-choose-us">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Why Choose <span class="text-gold">Travel Nook</span></h2>
+                <p>We are dedicated to establishing seamless, secure, and luxury-grade travel experiences.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="card-feature reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
+                    <h4>Best Pricing Guarantee</h4>
+                    <p>Luxury travel shouldn\'t have mystery fees. Enjoy curated stays and actions at transparent, industry-best prices.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card-feature reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <h4>Trusted Tour Guides</h4>
+                    <p>Our tour captains are local culture experts, safety-certified, and multilingual storytelling professionals.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card-feature reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Safe Travel Infrastructure</h4>
+                    <p>Your security is our absolute directive. Enjoy round-the-clock tracking, verified resort partners, and travel insurance.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="card-feature reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h4>24/7 Concierge Support</h4>
+                    <p>Get instant resolution on WhatsApp or call from our custom guest relationship team, anywhere, anytime.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="card-feature reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h4>Personalized Packages</h4>
+                    <p>Modify hotel selections, add activity options, or extend your duration seamlessly through our travel design desk.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="card-feature reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h4>Fast & Secure Booking</h4>
+                    <p>Instant confirmation invoices, hassle-free online refunds, and dynamic payment integrations in seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="section-padding" style="background-color: var(--dark-grey); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Voices of <span class="text-gold">Our Explorers</span></h2>
+                <p>Hear from real travelers who toured the world through TravelNook\'s premium packages.</p>
+            </div>
+            
+            <div class="testimonial-slider-container reveal">
+                <div class="testimonial-track">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide active">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Ananya Sharma">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"The Bali luxury retreat was magical! From our private infinity villa to the Nusa Penida speedboats, everything ran exactly on time. Best trip of my life!"</p>
+                        <h4 class="testimonial-user">Ananya Sharma</h4>
+                        <span class="testimonial-user-title">Product Manager, Bangalore</span>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Rohit Malhotra">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"Ladakh bike trip was exceptionally organized. Having a dedicated mechanic backup vehicle and oxygen cylinders made us feel very secure. Strongly recommended!"</p>
+                        <h4 class="testimonial-user">Rohit Malhotra</h4>
+                        <span class="testimonial-user-title">Tech Lead, Mumbai</span>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sneha Kapoor">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"TravelNook customized our Switzerland honeymoon itinerary flawlessly. The scenic train booking transfers and resort recommendations were absolute perfection."</p>
+                        <h4 class="testimonial-user">Sneha Kapoor</h4>
+                        <span class="testimonial-user-title">UX Designer, Gurgaon</span>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="slider-controls">
+                    <button class="slider-btn" id="slider-prev" aria-label="Previous Testimonial"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="slider-dots"></div>
+                    <button class="slider-btn" id="slider-next" aria-label="Next Testimonial"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-padding" style="background-color: var(--black);" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Explorer's <span class="text-gold">Lens Gallery</span></h2>
+                <p>Take a glimpse into the raw, beautiful memories captured by our explorers during their travels.</p>
+            </div>
+            
+            <div class="gallery-grid reveal">
+                <!-- Item 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" alt="Golden beaches of Goa">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Sunset Serenity, Goa</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=500&q=80" alt="Manali snow peaks">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Snowy Peaks, Manali</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=500&q=80" alt="Shikara ride on Dal Lake, Kashmir">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Shikara Ride, Dal Lake</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=500&q=80" alt="Ladakh monasteries and passes">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Passes of Ladakh</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=80" alt="Tegalalang Rice Terraces, Bali">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Rice Terraces, Bali</span>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80" alt="Burj Khalifa heights, Dubai">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Skyline Glare, Dubai</span>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1528181304800-2f1908c39522?auto=format&fit=crop&w=500&q=80" alt="Glittering temples of Thailand">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Exotic Escapes, Thailand</span>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=500&q=80" alt="Swiss Alpine peaks">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Alpine Luxury, Switzerland</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="./index.html" class="logo">
+                    <i class="fa-solid fa-paper-plane text-gold"></i> Travel<span>Nook</span>
+                </a>
+                <p>TravelNook is a premium luxury travel startup curating high-fidelity domestic & international vacation experiences. Travel stress-free under expert guidance.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./destinations.html">Destinations</a></li>
+                    <li><a href="./upcoming-trips.html">Upcoming Trips</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <div class="footer-info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>102, Premium Heights, Sector 62, Noida, UP, India</span>
+                </div>
+                <div class="footer-info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+                <div class="footer-info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>concierge@travelnook.com</span>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <div class="footer-newsletter">
+                    <p>Subscribe to our exclusive newsletter and unlock special members-only pricing and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-regular fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p class="footer-copy">&copy; 2026 TravelNook Premium. All rights reserved.</p>
+            <ul class="footer-bottom-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Global Modals Setup -->
+    
+    <!-- Explore Modal -->
+    <div class="modal-overlay" id="explore-modal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <div class="modal-hero-img">
+                    <img src="" id="explore-modal-img" alt="Destination Image">
+                </div>
+                <div class="modal-headline">
+                    <div>
+                        <h2 id="explore-modal-title">Goa</h2>
+                        <div class="card-rating" id="explore-modal-rating">
+                            <!-- Injected by script.js -->
+                        </div>
+                    </div>
+                    <div class="card-price" style="text-align: right;">
+                        <span class="price-label" style="display: block;">Package Cost</span>
+                        <span class="price-amount" id="explore-modal-price" style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">₹12,499</span>
+                    </div>
+                </div>
+                
+                <div class="modal-meta-info">
+                    <div class="meta-info-item">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <span>Duration</span>
+                            <strong id="explore-modal-duration">4 Days, 3 Nights</strong>
+                        </div>
+                    </div>
+                    <div class="meta-info-item">
+                        <i class="fa-regular fa-sun"></i>
+                        <div>
+                            <span>Best Time</span>
+                            <strong id="explore-modal-time">Nov to Feb</strong>
+                        </div>
+                    </div>
+                    <div class="meta-info-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <span>Inclusions</span>
+                            <strong id="explore-modal-included">Hotel, Transfers</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tabs">
+                    <div class="modal-tab active" data-tab="tab-overview">Overview</div>
+                    <div class="modal-tab" data-tab="tab-itinerary">Itinerary</div>
+                </div>
+                
+                <div class="tab-pane active" id="tab-overview">
+                    <p id="explore-modal-desc" style="color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 25px;">
+                        Goa is India\'s pocket-sized paradise, famous for its pristine beaches, vibrant nightlife, Portuguese heritage, and thrilling water activities.
+                    </p>
+                    <button class="btn btn-primary" id="explore-modal-book-btn">Book Package Now</button>
+                </div>
+                
+                <div class="tab-pane" id="tab-itinerary">
+                    <div class="itinerary-list" id="explore-modal-itinerary">
+                        <!-- Injected by script.js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-container" style="max-width: 500px;">
+            <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" style="padding: 30px;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 5px;">Book Your <span class="text-gold">Expedition</span></h3>
+                <p id="booking-modal-title" style="color: var(--text-muted); margin-bottom: 20px; font-weight: 500; font-size: 0.95rem;">Kashmir Magic Tour</p>
+                
+                <form id="booking-form">
+                    <div class="form-input-group">
+                        <label for="booking-name">Full Name</label>
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="booking-name" class="form-input-control" placeholder="e.g. Aryan Sharma" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-input-group">
+                        <label for="booking-email">Email Address</label>
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="booking-email" class="form-input-control" placeholder="e.g. aryan@gmail.com" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-input-group">
+                        <label for="booking-phone">Phone Number</label>
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="booking-phone" class="form-input-control" placeholder="e.g. 9876543210" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-input-group">
+                            <label for="booking-date">Travel Date</label>
+                            <i class="fa-regular fa-calendar" style="bottom: 16px;"></i>
+                            <input type="date" id="booking-date" class="form-input-control" style="padding-left: 45px;" required min="2026-05-22">
+                        </div>
+                        
+                        <div class="form-input-group">
+                            <label for="booking-num-tickets">Travelers</label>
+                            <i class="fa-solid fa-user-group" style="bottom: 16px;"></i>
+                            <input type="number" id="booking-num-tickets" class="form-input-control" value="1" min="1" max="10" style="padding-left: 45px;" required>
+                        </div>
+                    </div>
+
+                    <div class="booking-total-card">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Rate per head</span>
+                            <strong id="booking-modal-rate" style="font-size: 1rem;">₹19,999</strong>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Total Cost</span>
+                            <span class="booking-total-price" id="booking-total-cost">₹19,999</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;" id="booking-submit-btn">Confirm Booking Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Gallery Popup -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></span>
+        <div class="lightbox-content">
+            <img src="" id="lightbox-img" alt="Lightbox Image">
+            <p class="lightbox-caption" id="lightbox-caption">Caption</p>
+        </div>
+        <div class="lightbox-nav">
+            <button class="lightbox-arrow" id="lightbox-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="lightbox-arrow" id="lightbox-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+</html>

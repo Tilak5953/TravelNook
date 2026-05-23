@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | TravelNook</title>
+    <meta name="description" content="Register an account with TravelNook to design custom tour packages, track upcoming schedules, and save holiday points.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Icon Fonts (FontAwesome 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Page Loading Cover -->
+    <div class="page-loading-cover" id="loading-cover">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Auth Layout Page Wrapper -->
+    <section class="auth-page">
+        <div class="auth-card reveal">
+            <!-- Brand Logo -->
+            <div class="auth-header">
+                <a href="./index.html" class="logo" style="justify-content: center; font-size: 2.2rem; margin-bottom: 20px;">
+                    <i class="fa-solid fa-paper-plane text-gold"></i> Travel<span>Nook</span>
+                </a>
+                <h2>Create Account</h2>
+                <p>Sign up to unlock special member rates and itinerary builds.</p>
+            </div>
+
+            <!-- Signup Form -->
+            <form id="signup-form">
+                <!-- Name Group -->
+                <div class="form-input-group">
+                    <label for="signup-name">Full Name</label>
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="signup-name" class="form-input-control" placeholder="e.g. Aryan Sharma" required autocomplete="off">
+                    <span class="form-input-error">This field is required.</span>
+                </div>
+
+                <!-- Email Group -->
+                <div class="form-input-group">
+                    <label for="signup-email">Email Address</label>
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="signup-email" class="form-input-control" placeholder="e.g. name@email.com" required autocomplete="off">
+                    <span class="form-input-error">Enter a valid email address.</span>
+                </div>
+
+                <!-- Password Group -->
+                <div class="form-input-group">
+                    <label for="signup-pwd">Password</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="signup-pwd" class="form-input-control" placeholder="••••••••" required autocomplete="off">
+                    <i class="fa-regular fa-eye password-toggle" aria-label="Toggle Password Visibility"></i>
+                    
+                    <!-- Password Strength Meter -->
+                    <div class="password-strength-meter">
+                        <div class="password-strength-bar" id="strength-bar"></div>
+                    </div>
+                    <span class="password-strength-text" id="strength-text"></span>
+                    
+                    <span class="form-input-error" style="margin-top: 15px;">Password must be at least 6 characters.</span>
+                </div>
+
+                <!-- Confirm Password Group -->
+                <div class="form-input-group">
+                    <label for="signup-confirm-pwd">Confirm Password</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="signup-confirm-pwd" class="form-input-control" placeholder="••••••••" required autocomplete="off">
+                    <span class="form-input-error">Passwords do not match.</span>
+                </div>
+
+                <!-- Terms Option Check -->
+                <div class="auth-options" style="margin-bottom: 25px;">
+                    <label class="checkbox-container" style="align-items: flex-start;">
+                        <input type="checkbox" id="signup-terms" required>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">I agree to TravelNook's <a href="#" class="text-gold">Terms of Use</a> and <a href="#" class="text-gold">Privacy Policy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;" id="signup-submit-btn">Register Account</button>
+            </form>
+
+            <!-- Redirect Link -->
+            <p class="auth-redirect">Already have an account? <a href="./login.html">Sign In</a></p>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+</html>

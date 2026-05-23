@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Group Expeditions | TravelNook</title>
+    <meta name="description" content="View our upcoming schedule for group travel expeditions. Secure last call seats and tour the world with expert guides.">
+    <meta name="keywords" content="group travels, travel calendar, adventure calendar, travel schedules">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Icon Fonts (FontAwesome 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="upcoming-trips-page-marker">
+
+    <!-- Page Loading Cover -->
+    <div class="page-loading-cover" id="loading-cover">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Sticky Header & Navbar -->
+    <header class="header-nav scrolled">
+        <div class="container nav-container">
+            <a href="./index.html" class="logo" id="header-logo">
+                <i class="fa-solid fa-paper-plane"></i> Travel<span>Nook</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="./index.html" class="nav-link" id="nav-home">Home</a></li>
+                    <li><a href="./destinations.html" class="nav-link" id="nav-destinations">Destinations</a></li>
+                    <li><a href="./upcoming-trips.html" class="nav-link active" id="nav-trips">Upcoming Trips</a></li>
+                    <li><a href="./index.html#weekend-trips" class="nav-link" id="nav-weekend">Weekend Trips</a></li>
+                    <li><a href="./index.html#categories" class="nav-link" id="nav-categories">Categories</a></li>
+                    <li><a href="./index.html#activities" class="nav-link" id="nav-activities">Activities</a></li>
+                    <li><a href="./about.html" class="nav-link" id="nav-about">About Us</a></li>
+                    <li><a href="./contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+                    
+                    <!-- Mobile View Only Auth Buttons -->
+                    <div class="nav-auth-mobile">
+                        <a href="./login.html" class="login-btn">Login</a>
+                        <a href="./signup.html" class="signup-btn">Sign Up</a>
+                    </div>
+                </ul>
+            </nav>
+            
+            <div class="nav-auth">
+                <a href="./login.html" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;" id="nav-login-btn">Login</a>
+                <a href="./signup.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;" id="nav-signup-btn">Sign Up</a>
+            </div>
+
+            <div class="nav-toggle" id="nav-hamburger" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Banner -->
+    <section class="destinations-header-section" style="background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.95) 100%), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;">
+        <div class="container">
+            <span class="hero-badge"><i class="fa-solid fa-calendar-days text-gold"></i> Group Departures</span>
+            <h1>Upcoming <span class="text-gold">Expeditions</span></h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Select from our schedule of meticulously planned group travels and save your spots before they sell out.</p>
+        </div>
+    </section>
+
+    <!-- Schedule Grid Section -->
+    <section class="section-padding" style="background-color: var(--black);">
+        <div class="container">
+            <div class="trips-grid" id="upcoming-trips-grid">
+                <!-- Dynamically populated by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="./index.html" class="logo">
+                    <i class="fa-solid fa-paper-plane text-gold"></i> Travel<span>Nook</span>
+                </a>
+                <p>TravelNook is a premium luxury travel startup curating high-fidelity domestic & international vacation experiences. Travel stress-free under expert guidance.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./destinations.html">Destinations</a></li>
+                    <li><a href="./upcoming-trips.html">Upcoming Trips</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <div class="footer-info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>102, Premium Heights, Sector 62, Noida, UP, India</span>
+                </div>
+                <div class="footer-info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+                <div class="footer-info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>concierge@travelnook.com</span>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <div class="footer-newsletter">
+                    <p>Subscribe to our exclusive newsletter and unlock special members-only pricing and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-regular fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p class="footer-copy">&copy; 2026 TravelNook Premium. All rights reserved.</p>
+            <ul class="footer-bottom-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Global Modals Setup -->
+    
+    <!-- Explore Modal -->
+    <div class="modal-overlay" id="explore-modal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <div class="modal-hero-img">
+                    <img src="" id="explore-modal-img" alt="Destination Image">
+                </div>
+                <div class="modal-headline">
+                    <div>
+                        <h2 id="explore-modal-title">Goa</h2>
+                        <div class="card-rating" id="explore-modal-rating">
+                            <!-- Injected by script.js -->
+                        </div>
+                    </div>
+                    <div class="card-price" style="text-align: right;">
+                        <span class="price-label" style="display: block;">Package Cost</span>
+                        <span class="price-amount" id="explore-modal-price" style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">₹12,499</span>
+                    </div>
+                </div>
+                
+                <div class="modal-meta-info">
+                    <div class="meta-info-item">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <span>Duration</span>
+                            <strong id="explore-modal-duration">4 Days, 3 Nights</strong>
+                        </div>
+                    </div>
+                    <div class="meta-info-item">
+                        <i class="fa-regular fa-sun"></i>
+                        <div>
+                            <span>Best Time</span>
+                            <strong id="explore-modal-time">Nov to Feb</strong>
+                        </div>
+                    </div>
+                    <div class="meta-info-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <span>Inclusions</span>
+                            <strong id="explore-modal-included">Hotel, Transfers</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tabs">
+                    <div class="modal-tab active" data-tab="tab-overview">Overview</div>
+                    <div class="modal-tab" data-tab="tab-itinerary">Itinerary</div>
+                </div>
+                
+                <div class="tab-pane active" id="tab-overview">
+                    <p id="explore-modal-desc" style="color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 25px;">
+                        Goa is India\'s pocket-sized paradise, famous for its pristine beaches, vibrant nightlife, Portuguese heritage, and thrilling water activities.
+                    </p>
+                    <button class="btn btn-primary" id="explore-modal-book-btn">Book Package Now</button>
+                </div>
+                
+                <div class="tab-pane" id="tab-itinerary">
+                    <div class="itinerary-list" id="explore-modal-itinerary">
+                        <!-- Injected by script.js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-container" style="max-width: 500px;">
+            <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" style="padding: 30px;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 5px;">Book Your <span class="text-gold">Expedition</span></h3>
+                <p id="booking-modal-title" style="color: var(--text-muted); margin-bottom: 20px; font-weight: 500; font-size: 0.95rem;">Kashmir Magic Tour</p>
+                
+                <form id="booking-form">
+                    <div class="form-input-group">
+                        <label for="booking-name">Full Name</label>
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="booking-name" class="form-input-control" placeholder="e.g. Aryan Sharma" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-input-group">
+                        <label for="booking-email">Email Address</label>
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="booking-email" class="form-input-control" placeholder="e.g. aryan@gmail.com" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-input-group">
+                        <label for="booking-phone">Phone Number</label>
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="booking-phone" class="form-input-control" placeholder="e.g. 9876543210" required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-input-group">
+                            <label for="booking-date">Travel Date</label>
+                            <i class="fa-regular fa-calendar" style="bottom: 16px;"></i>
+                            <input type="date" id="booking-date" class="form-input-control" style="padding-left: 45px;" required min="2026-05-22">
+                        </div>
+                        
+                        <div class="form-input-group">
+                            <label for="booking-num-tickets">Travelers</label>
+                            <i class="fa-solid fa-user-group" style="bottom: 16px;"></i>
+                            <input type="number" id="booking-num-tickets" class="form-input-control" value="1" min="1" max="10" style="padding-left: 45px;" required>
+                        </div>
+                    </div>
+
+                    <div class="booking-total-card">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Rate per head</span>
+                            <strong id="booking-modal-rate" style="font-size: 1rem;">₹19,999</strong>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Total Cost</span>
+                            <span class="booking-total-price" id="booking-total-cost">₹19,999</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;" id="booking-submit-btn">Confirm Booking Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+</html>
